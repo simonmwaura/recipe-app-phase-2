@@ -16,12 +16,18 @@ export default function Recipe() {
 
  
   return (
+    
     <div>
-    {
+      <div className='grid md:grid-cols-3  grid-cols-1 gap-6'>
+
+      {
         posts.map((post)=>(
           <Post key={post.id} setOndelete={setOndelete} post={post}/>
         ))
        }
+
+      </div>
+    
     </div>
   )
 }

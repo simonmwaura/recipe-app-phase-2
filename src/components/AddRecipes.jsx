@@ -1,4 +1,5 @@
 import React, { useEffect, useState }  from 'react'
+import { toast } from 'react-toastify'
 
 
 export default function AddRecipes() 
@@ -12,13 +13,30 @@ const[images,setImages]=useState()
 const[comments,setComments]=useState([])
 
 
-console.log(recipename)
 
 
 function handleSubmit(e){
      e.preventDefault()
 
-     console.log(recipename,ingredients,listofingredients,listofcookinginstruction,cookinginstruction,images)
+     fetch('http://localhost:3000/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    recipename:recipename,
+    ingredients: ingredients,
+    listofingredients: listofingredients,
+    cookinginstruction:cookinginstruction,
+    listofcookinginstruction:listofcookinginstruction,
+    images:images,
+    comments:comments
+  }),
+  headers: {
+    'Content-type': 'application/json; ',
+  },
+})
+  .then((response) => response.json())
+  .then((res) =>{
+      toast.success("Post saved successfully")
+  } );
 }
 
   return (
@@ -56,7 +74,7 @@ function handleSubmit(e){
       <textarea value={images} onChange={(e)=>setImages(e.target.value)} type="text" className="justify-center items-center block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required></textarea>
       <label for="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">kindly add the image of the recipe </label>
   </div>
-  <button type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Save post</button>
+  <button type="Submit" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Save post</button>
   </form>
   </div>
    </div>
