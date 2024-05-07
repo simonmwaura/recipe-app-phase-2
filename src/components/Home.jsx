@@ -8,12 +8,10 @@ import PizzaMenu from '../Home components/PizzaMenu'
 export default function Home() {
   return (
     <>
-    <Navbar/>
-    <Main/>
-    
    
+    <Main/>
     <PizzaMenu/>
-    <Footer/>
+    
      
     </>
   )
