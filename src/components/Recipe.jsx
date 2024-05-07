@@ -22,7 +22,7 @@ export default function Recipe() {
 
       {
         posts.map((post)=>(
-          <Post key={post.id} setOndelete={setOndelete} post={post}/>
+          <Post  key={post.id} setOndelete={setOndelete} post={post}/>
         ))
        }
 
