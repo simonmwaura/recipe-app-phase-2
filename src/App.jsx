@@ -7,7 +7,8 @@ import Home from './components/Home'
 import Recipe from './components/Recipe'
 import AddRecipes from './components/AddRecipes';
 import Contactus from './components/Contactus';
-import Layout from './components/Layout';
+import Layout from './components/Layout'
+import Blog from './components/Blog';
 
 function App() {
   
@@ -20,7 +21,7 @@ function App() {
       <Route path="/recipe" element={<Recipe/>} />
       <Route path="/addrecipes" element={<AddRecipes/>} />
       <Route path="/contactus" element={<Contactus/>} />
-      <Route path='/blog' element={}></Route>
+      <Route path='/blog/:id' element={<Blog/>}></Route>
 
         </Route>
       
