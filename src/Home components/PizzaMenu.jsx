@@ -32,7 +32,7 @@ export default function PizzaMenu() {
         <h1 className='text-4xl font-bold text-orange-600 '>Types Of Pizza</h1>  
         </div>
          {/* the types of pizza */}
-        <div className='grid grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-14 md:gap-5 place-items-center '>
+        <div className='grid grid-cols-3 sm:grid-cols-1 md:grid-cols-3 gap-14 md:gap-5 place-items-center '>
        {
         pizzaRecipes.map((data,index) =>{
           return (
