@@ -3,7 +3,6 @@ import Post from '../recipe component/Post';
 
 export default function Recipe() {
   const[posts,setPosts]=useState([])
-  const[onDelete,setOndelete]=useState()
 
  useEffect(()=>{
 
@@ -12,17 +11,18 @@ export default function Recipe() {
   .then((data) =>{
     setPosts(data)
   } );
-},[onDelete])
+},[])
 
  
   return (
     
     <div>
+      <h1>simon</h1>
       <div className='grid md:grid-cols-3  grid-cols-1 gap-6'>
 
       {
         posts.map((post)=>(
-          <Post  key={post.id} setOndelete={setOndelete} post={post}/>
+          <Post  key={post.id} post={post}/>
         ))
        }
 

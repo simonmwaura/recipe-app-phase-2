@@ -11,7 +11,7 @@ export default function Footer() {
           <div class="mb-6 md:mb-0">
               <a href="/Home" class="flex items-center">
                   <img src="./images/sm.png" class="h-14 me-3" alt="logo is missing" />
-                  <span class="self-center text-white text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                  <span class="self-center text-white text-2xl font-semibold whitespace-nowrap dark:text-white">Pizza</span>
               </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
