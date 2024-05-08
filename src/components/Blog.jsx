@@ -33,42 +33,57 @@ export default function Blog() {
 
 
   return (
-    <div className='flex justify-center'>
+  <body className='bg-gray-100'>
+      <div className='container mx-auto p-6'>
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+                  
+                 <h5 className="text-2xl font-bold mb-4">
+                  {post.recipename}
+                 </h5>
+            
+                 <img className="max-w-sm mx-auto my-4 rounded-lg shadow mb-4 " src={post.images} alt={post.images} />
+
+                 <p className="text-xl font-semibold mb-2">Ingredients</p>
+
+                 <ul className="list-disc list-inside mb-4">
+                  {
+                    (()=>{
+                      const ingredients=post.listofingredients?.split(",")
+                     return ingredients && ingredients.map(( ingredient,index)=>(
+                         <li key={index} className="mb-2">{ingredient}</li>  
+                      ))
+                      
+                    })()
+
+                  }
+                   
+                </ul>
+
+                <h2 className="text-xl font-semibold mb-2"> Cooking Instructions</h2>
+                <ol className="list-decimal list-inside mb-6">
+                   <li className="mb-2">{post.listofcookinginstruction}</li> 
+                </ol>
      
-
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <div>
-        <img class="rounded-t-lg h-[50vh] w-full" src="https://images.pexels.com/photos/2762942/pexels-photo-2762942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-    </div>
-
-
-    <button onClick={()=>handleDelete(post.id)} type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Delete</button>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{post.recipename}</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.ingredients}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.listofingredients}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.cookinginstruction}</p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.listofcookinginstruction}</p>
-        <div className='bg-green-600 p-4 '>
-              <h5>comments  {post && post.comments && post.comments.length}</h5>
-                {
-                 post && post.comments && post.comments.map((comment,index)=>(
-                    <div className='p-2 bg-white  mt-2' key={index}>
-                        <p>{comment.text}</p>
-                        <p>{comment.author}</p>
-
-                    </div>
-                  ))
-                }
-            </div>
-       
-    </div>
-</div>
-
-
-
-    </div>
+               <div class="p-5 rounded-lg">
+                      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
+                      <div className=' p-5 rounded-lg'>
+                            <h5>comments  {post && post.comments && post.comments.length}</h5>
+                              {
+                                post && post.comments && post.comments.map((comment,index)=>(
+                                  <div className='p-2 bg-white  mt-2' key={index}>
+                                      <p>{comment.text}</p>
+                                      <p>{comment.author}</p>
+                                  </div>
+                                ))
+                              }
+               </div>   
+                 <div className='text-center'>
+                <button onClick={()=>handleDelete(post.id)} type="button" className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">Delete</button>
+                </div>    
+               </div>
+          </div>
+      </div>
+  </body>
+  
   )
 }

@@ -10,18 +10,18 @@ export default function Post({post}) {
   return (
     <div>
 
-<Link to={`/blog/${post.id}`} className='border p-5 bg-green-600' key={post.id}>
-<div>
-        <img class="rounded-t-lg h-[50vh] w-full" src="https://images.pexels.com/photos/2762942/pexels-photo-2762942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-    </div>
-            <h1 className='text-xl font-semibold'>{post.recipename}</h1>
-            <h4 className='font-extrabold text-2xl '>ingredients</h4>
-            <p>{post.listofingredients}</p>
-            <h4 className='font-extrabold text-2xl'>cookinginstruction</h4>
-            <p>{post.listofcookinginstruction}</p>
-            <p>{post.images}</p>
+            <Link to={`/blog/${post.id}`} className='border p-5 bg-green-600' key={post.id}><div className='w-40 h-40 object-cover rounded-lg mb-4'>
+    <img src={post.images} alt='' className='w-full h-40 object-cover rounded-t-lg' />
+  </div><div className='p-6'>
+    <h1 className='text-2xl font-bold mb-2'>{post.recipename}</h1>
+    <h4 className='font-bold text-lg mb-2'>Ingredients</h4>
+    <p className='text-lg mb-4'>{post.listofingredients}</p>
+    <h4 className='font-bold text-lg mb-2'>Cooking Instructions</h4>
+    <p className='text-lg'>{post.listofcookinginstruction}</p>
+  </div>
 
-          </Link>
+            </Link>   
     </div>
+    
   )
 }

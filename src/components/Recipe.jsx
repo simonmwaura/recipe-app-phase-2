@@ -23,14 +23,14 @@ export default function Recipe() {
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
-  const endOffset = itemOffset + 16;
+  const endOffset = itemOffset + 6;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = posts.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(posts.length / 16);
+  const pageCount = Math.ceil(posts.length / 6);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected *16) % posts.length;
+    const newOffset = (event.selected *6) % posts.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
