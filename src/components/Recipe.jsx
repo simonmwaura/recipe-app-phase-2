@@ -2,7 +2,7 @@ import React, { useEffect, useState }  from 'react'
 import Post from '../recipe component/Post';
 import ReactPaginate from 'react-paginate';
 
-export default function Recipe() {
+export default function Recipe({ondelete}) {
   const[posts,setPosts]=useState([])
 
  useEffect(()=>{
@@ -12,7 +12,7 @@ export default function Recipe() {
   .then((data) =>{
     setPosts(data)
   } );
-},[])
+},[ondelete])
 
  
 

@@ -1,10 +1,10 @@
 import React,{useEffect,useState} from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-export default function Blog() {
+export default function Blog({setOnDelete}) {
   const {id}=useParams()
   const[post,setPost]=useState({})
- 
+ const nav=useNavigate()
 
   useEffect(()=>{
     fetch(`http://localhost:3000/posts/${id}`)
@@ -22,7 +22,8 @@ export default function Blog() {
     })
     .then((response) =>response.json())
     .then((response) =>{
-    
+       setOnDelete(id)
+       nav("/recipe")
       toast.success("Post deleted succesfully")
     })
   
@@ -41,7 +42,7 @@ export default function Blog() {
                   {post.recipename}
                  </h5>
             
-                 <img className="max-w-sm mx-auto my-4 rounded-lg shadow mb-4 " src={post.images} alt={post.images} />
+                 <img className="rounded-lg  mx-auto my-4 shadow mb-4 h-[70vh]" src={post.images} alt={post.images} />
 
                  <p className="text-xl font-semibold mb-2">Ingredients</p>
 
@@ -61,6 +62,16 @@ export default function Blog() {
 
                 <h2 className="text-xl font-semibold mb-2"> Cooking Instructions</h2>
                 <ol className="list-decimal list-inside mb-6">
+                {
+                    (()=>{
+                      const instructions=post.listofcookinginstruction?.split(",")
+                     return instructions && instructions.map(( instruction,index)=>(
+                         <li key={index} className="mb-2">{instruction}</li>  
+                      ))
+                      
+                    })()
+
+                  }
                    <li className="mb-2">{post.listofcookinginstruction}</li> 
                 </ol>
      

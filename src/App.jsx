@@ -1,4 +1,4 @@
-import react from 'react'
+import react, { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -11,17 +11,19 @@ import Layout from './components/Layout'
 import Blog from './components/Blog';
 
 function App() {
-  
+  const[ondelete,setOnDelete]=useState(false)
+console.log(ondelete);
+
   return (
     <>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout/>}>
         <Route path="/" element={<Home/>} />
-      <Route path="/recipe" element={<Recipe/>} />
+      <Route path="/recipe" element={<Recipe ondelete={ondelete}/>} />
       <Route path="/addrecipes" element={<AddRecipes/>} />
       <Route path="/contactus" element={<Contactus/>} />
-      <Route path='/blog/:id' element={<Blog/>}></Route>
+      <Route path='/blog/:id' element={<Blog setOnDelete={setOnDelete}/>}></Route>
 
         </Route>
       
