@@ -1,5 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
 
 export default function Blog({setOnDelete}) {
   const {id}=useParams()
@@ -90,6 +92,8 @@ export default function Blog({setOnDelete}) {
                </div>   
                  <div className='text-center'>
                 <button onClick={()=>handleDelete(post.id)} type="button" className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">Delete</button>
+                <Link to={`/update/${post.id}`} type="button" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-gray-800">Update
+                </Link>
                 </div>    
                </div>
           </div>

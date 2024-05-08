@@ -9,6 +9,7 @@ import AddRecipes from './components/AddRecipes';
 import Contactus from './components/Contactus';
 import Layout from './components/Layout'
 import Blog from './components/Blog';
+import UpdateBlog from './components/UpdateBlog';
 
 function App() {
   const[ondelete,setOnDelete]=useState(false)
@@ -24,6 +25,7 @@ console.log(ondelete);
       <Route path="/addrecipes" element={<AddRecipes/>} />
       <Route path="/contactus" element={<Contactus/>} />
       <Route path='/blog/:id' element={<Blog setOnDelete={setOnDelete}/>}></Route>
+      <Route path='/update/:id' element={<UpdateBlog />}></Route>
 
         </Route>
       
