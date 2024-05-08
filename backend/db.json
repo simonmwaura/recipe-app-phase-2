@@ -2,12 +2,12 @@
   "posts": [
     {
       "id": "2",
-      "recipename": "fish and chips",
+      "recipename": "moringa",
       "ingredients": "ingredients",
       "listofingredients": "flour,oil,water",
       "cookinginstruction": "cooking instructions",
       "listofcookinginstruction": "list of cooking instructions",
-      "images": "ingredients",
+      "images": "ingredientssimon",
       "comments": [
         {
           "id": 1,
@@ -59,6 +59,14 @@
       "listofingredients": "  mwaura",
       "listofcookinginstruction": "  xavier",
       "images": "mungara",
+      "comments": []
+    },
+    {
+      "id": "fdce",
+      "recipename": "simon",
+      "listofingredients": "mwaura  ",
+      "listofcookinginstruction": "  mungara",
+      "images": "https://images.pexels.com/photos/19891553/pexels-photo-19891553/free-photo-of-woman-in-traditional-clothing-standing-on-meadow.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
       "comments": []
     }
   ]

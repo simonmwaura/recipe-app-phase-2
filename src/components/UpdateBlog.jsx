@@ -12,43 +12,54 @@ export default function UpdateBlog() {
   const [images, setImages] = useState('');
   const [comments, setComments] = useState([]);
 
-  const { post_id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    if (post_id) {
-      fetch(`http://localhost:3000/posts/${post_id}`)
+   
+      fetch(`http://localhost:3000/posts/${id}`)
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           setRecipeName(data.recipename);
           setListofingredients(data.listofingredients);
           setListofcookinginstructions(data.listofcookinginstruction);
           setImages(data.images);
         })
         .catch((error) => console.error('Error fetching post:', error));
-    }
-  }, [post_id]);
+   
+  }, [id]);
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    fetch(`http://localhost:3000/posts/${post_id}`, {
+    fetch(`http://localhost:3000/posts/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
-        recipename: recipename,
+        recipename:recipename,
+    
         listofingredients: listofingredients,
+      
         listofcookinginstruction: listofcookinginstruction,
-        images: images,
+        images:images,
+       
       }),
       headers: {
         'Content-type': 'application/json; ',
       },
     })
-      .then((response) => response.json())
-      .then((res) => {
-        nav('/');
-        toast.success('Post updated successfully');
-      })
-      .catch((error) => console.error('Error updating post:', error));
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Failed to update post')
+      }
+      return response.json()
+    })
+    .then((data) => {
+      nav("/recipe")
+      toast.success("Post updated successfully")
+    })
+    .catch((error) => {
+      console.error(error)
+      toast.error("Failed to update post")
+    })
   }
 
   return (
@@ -57,7 +68,7 @@ export default function UpdateBlog() {
             <img src="./images/uzi.png" alt="image" className='w-full h-full object-cover rounded-lg bg-green-800'/>
           </div>
   <div class='w-1/2 p-4'>
-    <h1 className='text-5xl  text-white text-center font-bold pb-16'>Please update your recipe here {post_id}</h1>
+    <h1 className='text-5xl  text-white text-center font-bold pb-16'>Please update your recipe here </h1>
     {/* <!-- Add the rest of your text content here --> */}
 
     <form class="max-w-md mx-auto " onSubmit={handleSubmit}>
