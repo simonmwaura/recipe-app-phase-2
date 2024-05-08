@@ -1,8 +1,50 @@
 {
   "posts": [
     {
+      "id": "1",
+      "recipename": "chapati and meat stew",
+      "ingredients": "ingredients",
+      "listofingredients": "flour,oil,water",
+      "cookinginstruction": "cooking instructions",
+      "listofcookinginstruction": "list of cooking instructions",
+      "images": "ingredients",
+      "comments": [
+        {
+          "id": 1,
+          "author": "Alice",
+          "text": "Great post, looking forward to more!"
+        },
+        {
+          "id": 2,
+          "author": "Bob",
+          "text": "Interesting read, thanks for sharing."
+        }
+      ]
+    },
+    {
       "id": "2",
       "recipename": "fish and chips",
+      "ingredients": "ingredients",
+      "listofingredients": "flour,oil,water",
+      "cookinginstruction": "cooking instructions",
+      "listofcookinginstruction": "list of cooking instructions",
+      "images": "ingredients",
+      "comments": [
+        {
+          "id": 1,
+          "author": "Alice",
+          "text": "Great post, looking forward to more!"
+        },
+        {
+          "id": 2,
+          "author": "Bob",
+          "text": "Interesting read, thanks for sharing."
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "recipename": "chapati and meat stew",
       "ingredients": "ingredients",
       "listofingredients": "flour,oil,water",
       "cookinginstruction": "cooking instructions",
@@ -29,32 +71,6 @@
       "cookinginstruction": "love",
       "listofcookinginstruction": "money",
       "images": "cookie",
-      "comments": []
-    },
-    {
-      "id": "41db",
-      "recipename": "ASDFGHJ",
-      "ingredients": "Asrtyu",
-      "listofingredients": "  aWERTYUI",
-      "cookinginstruction": "AWSERTYUIO",
-      "listofcookinginstruction": "  ASDFGHJKL",
-      "images": "Asdertyui",
-      "comments": []
-    },
-    {
-      "id": "9598",
-      "recipename": "qwerrty",
-      "listofingredients": "  qwertyuisimon",
-      "listofcookinginstruction": "mwaura  ",
-      "images": "  dddd",
-      "comments": []
-    },
-    {
-      "id": "d3af",
-      "recipename": "QWERTY",
-      "listofingredients": "  WERTY",
-      "listofcookinginstruction": "  QWERTY",
-      "images": "ERFG",
       "comments": []
     }
   ]
