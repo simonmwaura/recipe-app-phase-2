@@ -2,72 +2,58 @@
   "posts": [
     {
       "id": "2",
-      "recipename": "moringa",
-      "ingredients": "ingredients",
-      "listofingredients": "flour,oil,water",
-      "cookinginstruction": "cooking instructions",
-      "listofcookinginstruction": "list of cooking instructions",
-      "images": "ingredientssimon",
-      "comments": [
-        {
-          "id": 1,
-          "author": "Alice",
-          "text": "Great post, looking forward to more!"
-        },
-        {
-          "id": 2,
-          "author": "Bob",
-          "text": "Interesting read, thanks for sharing."
-        }
-      ]
+      "recipe": "moringa",
+      "ingredients": "flour,oil,water",
+      "cookinginstruction": "list of cooking instructions",
+      "images": "ingredientssimon"
     },
     {
       "id": "5320",
-      "recipename": "qwerftf",
-      "listofingredients": "  QWERTY",
-      "listofcookinginstruction": "  Awerty",
-      "images": "QWERTYU",
-      "comments": []
+      "recipe": "qwerftf",
+      "ingredients": "  QWERTY",
+      "cookinginstruction": "  Awerty",
+      "images": "QWERTYU"
     },
     {
       "id": "b84b",
-      "recipename": "AWERT78",
-      "listofingredients": "  aqwe54r678",
-      "listofcookinginstruction": "  ASERTYU",
-      "images": "Aserty",
-      "comments": []
+      "recipe": "AWERT78",
+      "ingredients": "  aqwe54r678",
+      "cookinginstruction": "  ASERTYU",
+      "images": "Aserty"
     },
     {
       "id": "b2b1",
-      "recipename": "qwerftf",
-      "listofingredients": "  QWERTY",
-      "listofcookinginstruction": "  Awerty",
-      "images": "QWERTYU",
-      "comments": []
+      "recipe": "qwerftf",
+      "ingredients": "  QWERTY",
+      "cookinginstruction": "  Awerty",
+      "images": "QWERTYU"
     },
     {
       "id": "0623",
-      "recipename": "AWERT78",
-      "listofingredients": "  aqwe54r678",
-      "listofcookinginstruction": "  ASERTYU",
-      "images": "Aserty",
-      "comments": []
+      "recipe": "AWERT78",
+      "ingredients": "  aqwe54r678",
+      "cookinginstruction": "  ASERTYU",
+      "images": "Aserty"
     },
     {
       "id": "d6dc",
-      "recipename": "simon",
-      "listofingredients": "  mwaura",
-      "listofcookinginstruction": "  xavier",
-      "images": "mungara",
-      "comments": []
+      "recipe": "simon",
+      "ingredients": "  mwaura",
+      "cookinginstruction": "  xavier",
+      "images": "mungara"
     },
     {
       "id": "fdce",
-      "recipename": "simon",
-      "listofingredients": "mwaura  ",
-      "listofcookinginstruction": "  mungara",
-      "images": "https://images.pexels.com/photos/19891553/pexels-photo-19891553/free-photo-of-woman-in-traditional-clothing-standing-on-meadow.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-      "comments": []
+      "recipe": "simon",
+      "ingredients": "mwaura  ",
+      "cookinginstruction": "  mungara",
+      "images": "https://images.pexels.com/photos/19891553/pexels-photo-19891553/free-photo-of-woman-in-traditional-clothing-standing-on-meadow.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+    },
+    {
+      "id": "vWbWJeh"
+    },
+    {
+      "id": "RJhEF1x"
     }
   ]
 }

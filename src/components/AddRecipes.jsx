@@ -1,77 +1,97 @@
-import React, { useEffect, useState }  from 'react'
+import React, { useState }  from 'react'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
-export default function AddRecipes() 
-{
-  const nav=useNavigate()
-const[recipename,setRecipeName]=useState()
-const[ingredients,setIngredients]=useState()
-const[listofingredients,setListofingredients]=useState()
-const[cookinginstruction,setCookinginstructions]=useState()
-const[listofcookinginstruction,setListofcookinginstructions]=useState()
-const[images,setImages]=useState()
-const[comments,setComments]=useState([])
-
-
-
+export default function AddRecipes(){ 
+const nav=useNavigate()
+const[recipe,setRecipe]=useState('')
+const[ingredients,setIngredients]=useState('')
+const[cookinginstruction,setCookingInstruction]=useState('')
+const[images,setImages]=useState('')
+ 
 
 function handleSubmit(e){
-     e.preventDefault()
+e.preventDefault()
 
-     fetch('http://localhost:3000/posts', {
+fetch('https://recipe-app-phase-2.onrender.com/posts', {
   method: 'POST',
   body: JSON.stringify({
-    recipename:recipename,
-    ingredients: ingredients,
-    listofingredients: listofingredients,
+    recipe: recipe,    
+    ingredients: ingredients,   
     cookinginstruction:cookinginstruction,
-    listofcookinginstruction:listofcookinginstruction,
     images:images,
-    comments:comments
+    
   }),
   headers: {
-    'Content-type': 'application/json; ',
+    'Content-type': 'application/json;'
   },
 })
   .then((response) => response.json())
-  .then((res) =>{
+  .then((response) =>{
     nav("/recipe")
       toast.success("Post saved successfully")
   } );
 }
 
   return (
-    <div className='flex  bg-green-900'>
-          <div className='w-1/2 p-16 text-white '>
-            <img src="./images/uzi.png" alt="image" className='w-full h-full object-cover rounded-lg bg-green-800'/>
-          </div>
-  <div class='w-1/2 p-4'>
-    <h1 className='text-5xl  text-white text-center font-bold pb-16'>Please add your recipe here</h1>
-    {/* <!-- Add the rest of your text content here --> */}
+    <div className='flex flex-col md:flex-row bg-white'>
+        <div className='md:w-1/2 p-16 md:p-0 text-center md:text-left text-white'>
+            <img src="./images/uzi.png" alt="image" className='w-full h-full object rounded-lg bg-white '/>
+        </div>
 
-    <form class="max-w-md mx-auto " onSubmit={handleSubmit}>
-      
-  <div class="relative z-0 w-full mb-5 group">
-      <input value={recipename} onChange={(e)=>setRecipeName(e.target.value)} type="text" className="justify-center items-center block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
-      <label for="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">kindly enter the name of your recipe </label>
-  </div>
-  
-  <div class="relative z-0 w-full mb-5 group">
-      <textarea value={listofingredients} onChange={(e)=>setListofingredients(e.target.value)} type="text" className="justify-center items-center block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>  </textarea>  
-      <label for="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">kindly enter the list of ingredients </label>
-  </div>
-  
-  <div class="relative z-0 w-full mb-5 group">
-      <textarea value={listofcookinginstruction} onChange={(e)=>setListofcookinginstructions(e.target.value)} type="text" className="justify-center items-center block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>  </textarea>  
-      <label for="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">kindly enter the set of cooking instructions </label>
-  </div>
-  <div class="relative z-0 w-full mb-5 group">
-      <textarea value={images} onChange={(e)=>setImages(e.target.value)} type="text" className="justify-center items-center block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required></textarea>
-      <label for="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">kindly add the image of the recipe </label>
-  </div>
-  <button type="Submit" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Save post</button>
-  </form>
+       <div className='w-full md:w-1/2 p-4'>
+    <h1 className='text-5xl  md:text-left pl-36  text-green-700 text-center font-bold pb-16 pt-56'>Please add your recipe here</h1>
+ 
+
+    <form onSubmit={handleSubmit} className=' max-w-md mx-auto'>
+          <div className='mb-5'>
+            <input
+              value={recipe}
+              onChange={(e) => setRecipe(e.target.value)}
+              type='text'
+              className='block w-full px-3 py-2 placeholder-gray-500 border rounded-md focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm'
+              placeholder='kindly enter the name of your recipe'
+              required
+            />
+          </div>
+
+          <div className='mb-5'>
+            <textarea
+              value={ingredients}
+              onChange={(e) => setIngredients(e.target.value)}
+              type='text'
+              className='block w-full px-3 py-2 placeholder-gray-500 border rounded-md focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm'
+              placeholder='kindly enter the list of ingredients'
+              required
+            />
+          </div>
+
+          <div className='mb-5'>
+            <textarea
+              value={cookinginstruction}
+              onChange={(e) => setCookingInstruction(e.target.value)}
+              type='text'
+              className='block w-full px-3 py-2 placeholder-gray-500 border rounded-md focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm'
+              placeholder='kindly enter the set of cooking instructions'
+              required
+            />
+          </div>
+
+          <div className='mb-5'>
+            <textarea
+              value={images}
+              onChange={(e) => setImages(e.target.value)}
+              type='text'
+              className='block w-full px-3 py-2 placeholder-gray-500 border rounded-md focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm'
+              placeholder='kindly add the image of the recipe'
+              required
+            />
+          </div>
+
+          <button type='submit' className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-green-600 border border-transparent rounded-md shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600'>
+            Add post
+          </button>
+        </form>
   </div>
    </div>
     

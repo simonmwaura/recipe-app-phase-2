@@ -9,7 +9,7 @@ export default function Navbar() {
 
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="./images/file.png" className="h-14" alt="pizza logo" />
-          <span className="self-center text-5xl text-green-600 font-extrabold whitespace-nowrap dark:text-white">Food<span className='text-green-600 font-extrabold'>Lovers</span></span>
+          <span className="self-center text-3xl text-green-600 font-extrabold whitespace-nowrap dark:text-white">Food<span className='text-green-600 font-extrabold'>Lovers</span></span>
         </Link>
 
         <button

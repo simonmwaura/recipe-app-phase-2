@@ -14,11 +14,11 @@ export default function Post({post}) {
   </div>
   <img src={post.images} alt='' className="w-[400px] mx-auto transform transition duration-300 hover:scale-105 justify-center" />
   <div className='flex flex-col items-center my-3 space-y-2'>
-    <h1 className='text-gray-900 poppins text-lg'>{post.recipename}</h1>
+    <h1 className='text-gray-900 poppins text-lg'>{post.recipe}</h1>
     <h4 className='font-bold text-lg mb-2'>Ingredients</h4>
-    <p className='text-gray-500 poppins text-sm text-center'>{post.listofingredients}</p>
+    <p className='text-gray-500 poppins text-sm text-center'>{post.ingredients}</p>
     <h4 className='font-bold text-lg mb-2'>Cooking Instructions</h4>
-    <p className='text-gray-500 poppins text-sm text-center'>{post.listofcookinginstruction}</p>
+    <p className='text-gray-500 poppins text-sm text-center'>{post.cookinginstruction}</p>
   </div>
 
           </Link>   

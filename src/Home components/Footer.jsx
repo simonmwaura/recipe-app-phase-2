@@ -5,19 +5,19 @@ export default function Footer() {
     <div>
 
 
-<footer class="bg-green-200 dark:bg-gray-900">
+<footer class="bg-green-500 dark:bg-gray-900">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
               <a href="/Home" class="flex items-center">
                   <img src="./images/sm.png" class="h-14 me-3" alt="logo is missing" />
-                  <span class="self-center text-white text-2xl font-semibold whitespace-nowrap dark:text-white">Pizza</span>
+                  <span class="self-center  text-green-900 text-2xl font-semibold whitespace-nowrap dark:text-white">Food Lovers</span>
               </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
-                  <h2 class="mb-6 text-sm font-semibold uppercase dark:text-white text-orange-600">pizza hut</h2>
-                  <ul class=" text-white dark:text-gray-400 font-medium">
+                  <h2 class="mb-6 text-sm font-semibold uppercase dark:text-white text-white ">pizza hut</h2>
+                  <ul class="  text-green-900 dark:text-gray-400 font-medium">
                       <li class="mb-4">
                           <a href="https://www.allrecipes.com/recipe/228222/breakfast-pizza/" class="hover:underline">breakfast pizza</a>
                       </li>
@@ -27,8 +27,8 @@ export default function Footer() {
                   </ul>
               </div>
               <div>
-                  <h2 class="mb-6 text-sm font-semibold  text-orange-600 uppercase dark:text-white">pizza inn</h2>
-                  <ul class=" text-white dark:text-gray-400 font-medium">
+                  <h2 class="mb-6 text-sm font-semibold  text-white  uppercase dark:text-white">pizza inn</h2>
+                  <ul class="  text-green-900 dark:text-gray-400 font-medium">
                       <li class="mb-4">
                           <a href="https://www.allrecipes.com/chicken-parmesan-pizza-recipe-7369199" class="hover:underline ">chicken pizza</a>
                       </li>
@@ -38,8 +38,8 @@ export default function Footer() {
                   </ul>
               </div>
               <div>
-                  <h2 class="mb-6 text-sm font-semibold text-orange-600 uppercase dark:text-white">dominos</h2>
-                  <ul class=" text-white dark:text-gray-400 font-medium">
+                  <h2 class="mb-6 text-sm font-semibold text-white  uppercase dark:text-white">dominos</h2>
+                  <ul class="  text-green-900 dark:text-gray-400 font-medium">
                       <li class="mb-4">
                           <a href="https://www.allrecipes.com/recipe/268466/detroit-style-pizza/" class="hover:underline">Pepperoni pizza</a>
                       </li>
@@ -52,7 +52,7 @@ export default function Footer() {
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm text-white sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">Simon Mwaura and Shadrack Ngeno™</a>. All Rights Reserved.
+          <span class="text-sm  text-green-900 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">Simon Mwaura and Shadrack Ngeno™</a>. All Rights Reserved.
           </span>
           <div class="flex mt-4 sm:justify-center sm:mt-0">
               <a href="#" class="text-white hover:text-gray-900 dark:hover:text-white">

@@ -7,7 +7,7 @@ export default function Recipe({ondelete}) {
 
  useEffect(()=>{
 
-  fetch('http://localhost:3000/posts')
+  fetch('https://recipe-app-phase-2.onrender.com/posts')
   .then((response) => response.json())
   .then((data) =>{
     setPosts(data)
@@ -23,14 +23,14 @@ export default function Recipe({ondelete}) {
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
-  const endOffset = itemOffset + 6;
+  const endOffset = itemOffset + 3;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = posts.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(posts.length / 6);
+  const pageCount = Math.ceil(posts.length / 3);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected *6) % posts.length;
+    const newOffset = (event.selected *3) % posts.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
@@ -55,16 +55,16 @@ export default function Recipe({ondelete}) {
        }
 
       </div>
-      <div className='flex flex-row justify-center my-20 bg-sky-200'>
+      <div className='flex flex-row justify-center my-20 bg-white text-green-600'>
         <ReactPaginate
         breakLabel="..."
         nextLabel="next >>"
         containerClassName="flex gap-4"
-        activeClassName="text-sky-800 font-bold"
+        activeClassName="text-green-600 font-bold"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="<< previous"
+        previousLabel="<< previous "
         renderOnZeroPageCount={null}
       />
      </div>

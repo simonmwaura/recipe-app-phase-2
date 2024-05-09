@@ -9,7 +9,7 @@ export default function Blog({setOnDelete}) {
  const nav=useNavigate()
 
   useEffect(()=>{
-    fetch(`http://localhost:3000/posts/${id}`)
+    fetch(`https://recipe-app-phase-2.onrender.com/posts/${id}`)
     .then((res)=>res.json())
     .then((data)=>{
        setPost(data)
@@ -19,7 +19,7 @@ export default function Blog({setOnDelete}) {
 
   const handleDelete=(id)=>{
   
-    fetch(`http://localhost:3000/posts/${id}`, {
+    fetch(`https://recipe-app-phase-2.onrender.com/posts/${id}`, {
       method: 'DELETE',
     })
     .then((response) =>response.json())
@@ -41,7 +41,7 @@ export default function Blog({setOnDelete}) {
           <div className="bg-white p-6 rounded-lg shadow-lg">
                   
                  <h5 className="text-2xl font-bold mb-4">
-                  {post.recipename}
+                  {post.recipe}
                  </h5>
             
                  <img className="rounded-lg  mx-auto my-4 shadow mb-4 h-[70vh]" src={post.images} alt={post.images} />
@@ -51,7 +51,7 @@ export default function Blog({setOnDelete}) {
                  <ul className="list-disc list-inside mb-4">
                   {
                     (()=>{
-                      const ingredients=post.listofingredients?.split(",")
+                      const ingredients=post.ingredients?.split(",")
                      return ingredients && ingredients.map(( ingredient,index)=>(
                          <li key={index} className="mb-2">{ingredient}</li>  
                       ))
@@ -66,7 +66,7 @@ export default function Blog({setOnDelete}) {
                 <ol className="list-decimal list-inside mb-6">
                 {
                     (()=>{
-                      const instructions=post.listofcookinginstruction?.split(",")
+                      const instructions=post.cookinginstruction?.split(",")
                      return instructions && instructions.map(( instruction,index)=>(
                          <li key={index} className="mb-2">{instruction}</li>  
                       ))
@@ -74,22 +74,9 @@ export default function Blog({setOnDelete}) {
                     })()
 
                   }
-                   <li className="mb-2">{post.listofcookinginstruction}</li> 
+                   
                 </ol>
      
-               <div class="p-5 rounded-lg">
-                      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
-                      <div className=' p-5 rounded-lg'>
-                            <h5>comments  {post && post.comments && post.comments.length}</h5>
-                              {
-                                post && post.comments && post.comments.map((comment,index)=>(
-                                  <div className='p-2 bg-white  mt-2' key={index}>
-                                      <p>{comment.text}</p>
-                                      <p>{comment.author}</p>
-                                  </div>
-                                ))
-                              }
-               </div>   
                  <div className='text-center'>
                 <button onClick={()=>handleDelete(post.id)} type="button" className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">Delete</button>
                 <Link to={`/update/${post.id}`} type="button" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-gray-800">Update
@@ -97,8 +84,8 @@ export default function Blog({setOnDelete}) {
                 </div>    
                </div>
           </div>
-      </div>
-  </body>
+     
+  </body> 
   
   )
 }
