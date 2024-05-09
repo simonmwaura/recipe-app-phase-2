@@ -37,7 +37,7 @@ fetch('https://recipe-app-phase-2-1.onrender.com/posts', {
   return (
     <div className='flex flex-col md:flex-row bg-white'>
         <div className='md:w-1/2 p-16 md:p-0 text-center md:text-left text-white'>
-            <img src="./images/uzi.png" alt="image" className='w-full h-full object rounded-lg bg-white '/>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTb8MaEVFruRsWGdMtthSMg15iJ209fCRCqRcrl0rull9AMslM8IwK0DkAHTkZ2ymTM8g&usqp=CAU" alt="image" className='w-full h-full object rounded-lg bg-white '/>
         </div>
 
        <div className='w-full md:w-1/2 p-4'>
