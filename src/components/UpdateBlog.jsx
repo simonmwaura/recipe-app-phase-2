@@ -48,11 +48,11 @@ export default function UpdateBlog() {
 
     }
   return (
-    <div className='flex  bg-green-900'>
-          <div className='w-1/2 p-16 text-white '>
-            <img src="./images/uzi.png" alt="image" className='w-full h-full object-cover rounded-lg bg-green-800'/>
+    <div className='flex flex-col md:flex-row bg-white'>
+          <div className='md:w-1/2 p-16 md:p-0 text-center md:text-left text-white '>
+            <img src="https://www.stockvault.net/data/2017/01/29/221904/preview16.jpg" alt="image" className='w-full h-full object-cover rounded-lg bg-green-800'/>
           </div>
-  <div class='w-1/2 p-4'>
+  <div className='w-full md:w-1/2 p-4'>
     <h1 className='text-5xl  text-white text-center font-bold pb-16'>Please update your recipe here </h1>
     {/* <!-- Add the rest of your text content here --> */}
 
