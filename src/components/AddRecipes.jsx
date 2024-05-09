@@ -12,25 +12,26 @@ const[images,setImages]=useState('')
 
 function handleSubmit(e){
 e.preventDefault()
+console.log(recipe,ingredients,cookinginstruction,images);
 
-fetch('https://recipe-app-phase-2.onrender.com/posts', {
+fetch('https://recipe-app-phase-2-1.onrender.com/posts', {
   method: 'POST',
   body: JSON.stringify({
     recipe: recipe,    
-    ingredients: ingredients,   
+     ingredients: ingredients,   
     cookinginstruction:cookinginstruction,
-    images:images,
-    
+    images:images
   }),
   headers: {
-    'Content-type': 'application/json;'
+    'Content-type': 'application/json; charset=UTF-8',
   },
 })
   .then((response) => response.json())
-  .then((response) =>{
+  .then((json) => {
     nav("/recipe")
-      toast.success("Post saved successfully")
-  } );
+    toast.success("post saved successfully")
+  });
+
 }
 
   return (

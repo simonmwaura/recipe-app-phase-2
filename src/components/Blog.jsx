@@ -9,17 +9,17 @@ export default function Blog({setOnDelete}) {
  const nav=useNavigate()
 
   useEffect(()=>{
-    fetch(`https://recipe-app-phase-2.onrender.com/posts/${id}`)
-    .then((res)=>res.json())
-    .then((data)=>{
-       setPost(data)
-    })
-  }, [id])
+    fetch(`https://recipe-app-phase-2-1.onrender.com/posts/${id}`)
+     .then((response) => response.json())
+     .then((json) =>{
+      setPost(json)
+     });
+     }, [id])
 
-
-  const handleDelete=(id)=>{
   
-    fetch(`https://recipe-app-phase-2.onrender.com/posts/${id}`, {
+   const handleDelete=(id)=>{
+  
+    fetch(`https://recipe-app-phase-2-1.onrender.com/posts/${id}`, {
       method: 'DELETE',
     })
     .then((response) =>response.json())
