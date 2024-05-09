@@ -51,7 +51,7 @@ export default function Blog({setOnDelete}) {
                  <ul className="list-disc list-inside mb-4">
                   {
                     (()=>{
-                      const ingredients=post.ingredients?.split(",")
+                      const ingredients=post.ingredients?.split("")
                      return ingredients && ingredients.map(( ingredient,index)=>(
                          <li key={index} className="mb-2">{ingredient}</li>  
                       ))
