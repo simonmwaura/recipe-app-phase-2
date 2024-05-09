@@ -66,7 +66,7 @@ export default function Blog({setOnDelete}) {
                 <ol className="list-decimal list-inside mb-6">
                 {
                     (()=>{
-                      const instructions=post.cookinginstruction?.split(",")
+                      const instructions=post.cookinginstruction?.split(".")
                      return instructions && instructions.map(( instruction,index)=>(
                          <li key={index} className="mb-2">{instruction}</li>  
                       ))
@@ -77,9 +77,9 @@ export default function Blog({setOnDelete}) {
                    
                 </ol>
      
-                 <div className='text-center'>
+                 <div className='text-center justify-between '>
                 <button onClick={()=>handleDelete(post.id)} type="button" className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">Delete</button>
-                <Link to={`/update/${post.id}`} type="button" className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-gray-800">Update
+                <Link to={`/update/${post.id}`} type="button" className="bg-gray-950 text-white px-4 py-3 rounded-lg hover:bg-gray-800">Update
                 </Link>
                 </div>    
                </div>

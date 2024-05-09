@@ -41,7 +41,7 @@ fetch('https://recipe-app-phase-2-1.onrender.com/posts', {
         </div>
 
        <div className='w-full md:w-1/2 p-4'>
-    <h1 className='text-5xl  md:text-left pl-36  text-green-700 text-center font-bold pb-16 pt-56'>Please add your recipe here</h1>
+    <h1 className='text-5xl  text-green-700 text-center font-bold pb-16 pt-56'>Please add your recipe here</h1>
  
 
     <form onSubmit={handleSubmit} className=' max-w-md mx-auto'>
