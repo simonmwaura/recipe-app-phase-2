@@ -14,7 +14,7 @@ function handleSubmit(e){
 e.preventDefault()
 console.log(recipe,ingredients,cookinginstruction,images);
 
-fetch('https://recipe-app-phase-2-1.onrender.com/posts', {
+fetch('https://recipe-app-phase-2-3.onrender.com/posts', {
   method: 'POST',
   body: JSON.stringify({
     recipe: recipe,    

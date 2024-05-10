@@ -9,7 +9,7 @@ export default function Blog({setOnDelete}) {
  const nav=useNavigate()
 
   useEffect(()=>{
-    fetch(`https://recipe-app-phase-2-1.onrender.com/posts/${id}`)
+    fetch(`https://recipe-app-phase-2-3.onrender.com/posts/${id}`)
      .then((response) => response.json())
      .then((json) =>{
       setPost(json)
@@ -19,7 +19,7 @@ export default function Blog({setOnDelete}) {
   
    const handleDelete=(id)=>{
   
-    fetch(`https://recipe-app-phase-2-1.onrender.com/posts/${id}`, {
+    fetch(`https://recipe-app-phase-2-3.onrender.com/posts/${id}`, {
       method: 'DELETE',
     })
     .then((response) =>response.json())

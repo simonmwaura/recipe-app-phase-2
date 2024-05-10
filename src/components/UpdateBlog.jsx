@@ -13,7 +13,7 @@ export default function UpdateBlog() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://recipe-app-phase-2-1.onrender.com/posts/${id}`)
+    fetch(`https://recipe-app-phase-2-3.onrender.com/posts/${id}`)
     .then((response) => response.json())
     .then((json) =>{
       setRecipe(json.recipe)
@@ -28,7 +28,7 @@ export default function UpdateBlog() {
     e.preventDefault();
     
 
-  fetch(`https://recipe-app-phase-2-1.onrender.com/posts/${id}`, {
+  fetch(`https://recipe-app-phase-2-3.onrender.com/posts/${id}`, {
     method: 'PATCH',
     body: JSON.stringify({
       recipe:recipe,

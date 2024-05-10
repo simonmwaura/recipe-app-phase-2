@@ -7,7 +7,7 @@ export default function Recipe({ondelete}) {
 
  useEffect(()=>{
 
-  fetch('https://recipe-app-phase-2-1.onrender.com/posts')
+  fetch('https://recipe-app-phase-2-3.onrender.com/posts')
   .then((response) => response.json())
   .then((data) =>{
     setPosts(data)
